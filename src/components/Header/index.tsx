@@ -12,7 +12,7 @@ export function Header() {
           </a>
           <a href="">Posts</a>
         </nav>
-        <SignInButton  />
+        <SignInButton />
       </div>
     </header>
   );
