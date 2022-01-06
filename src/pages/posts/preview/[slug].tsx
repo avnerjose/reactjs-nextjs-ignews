@@ -21,11 +21,11 @@ interface PostPreviewProps {
 
 const PostPreview: NextPage<PostPreviewProps> = ({ post }) => {
   const [session] = useSession();
-  const { push } = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     if (session?.activeSubscription) {
-      push(`/posts/${post.slug}`);
+      router.push(`/posts/${post.slug}`);
     }
   }, [session]);
 

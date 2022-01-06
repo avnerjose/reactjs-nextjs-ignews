@@ -26,8 +26,8 @@ const Posts: NextPage<PostPageProp> = ({ posts }) => {
       </Head>
       <main className={styles.container}>
         <div className={styles.posts}>
-          {posts.map(({ slug, excerpt, title, updatedAt }, index) => (
-            <Link href={`/posts/${slug}`} key={index}>
+          {posts.map(({ slug, excerpt, title, updatedAt }) => (
+            <Link href={`/posts/${slug}`} key={slug}>
               <a>
                 <time>{updatedAt}</time>
                 <strong>{title}</strong>

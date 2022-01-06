@@ -7,8 +7,18 @@ import { stripe } from "../services/stripe";
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   };
+}
+
+interface AvnerJoséProps {
+  github: string;
+  techs: string[];
+  description: string;
+}
+
+function AvnerJosé({ github, techs }: AvnerJoséProps) {
+  return <div></div>;
 }
 
 const Home: NextPage<HomeProps> = ({ product }) => {
@@ -27,7 +37,7 @@ const Home: NextPage<HomeProps> = ({ product }) => {
             Get access to all the publications <br />
             <span>for {product.amount} month</span>
           </p>
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
         <div>
           <Image src="/images/avatar.svg" alt="Girl coding" layout="fill" />
@@ -59,3 +69,14 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 24 * 60 * 60, //24 hours
   };
 };
+
+                                                                                        <AvnerJosé
+                                                                                          github="https://github.com/avnerjose"
+                                                                                          techs={["ReactJS", "NextJS", "React-Native"]}
+                                                                                          description="Bem vindo ao meu canal no Youtube"
+                                                                                        />
+
+
+
+
+                                                                                        

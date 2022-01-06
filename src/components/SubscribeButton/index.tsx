@@ -4,13 +4,9 @@ import { api } from "../../services/api";
 import { getStripeJS } from "../../services/stripe-js";
 import styles from "./styles.module.scss";
 
-interface SubscribeButtonProps {
-  priceId: string;
-}
-
-export function SubscribeButton({ priceId }: SubscribeButtonProps) {
+export function SubscribeButton() {
   const [session] = useSession();
-  const { push } = useRouter();
+  const router = useRouter();
 
   async function handleSubscribe() {
     if (!session) {
@@ -18,8 +14,8 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
       return;
     }
 
-    if (session.activeSession) {
-      push("/posts");
+    if (session.activeSubscription) {
+      router.push("/posts");
     }
 
     try {
