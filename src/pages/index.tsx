@@ -10,17 +10,6 @@ interface HomeProps {
     amount: string;
   };
 }
-
-interface AvnerJoséProps {
-  github: string;
-  techs: string[];
-  description: string;
-}
-
-function AvnerJosé({ github, techs }: AvnerJoséProps) {
-  return <div></div>;
-}
-
 const Home: NextPage<HomeProps> = ({ product }) => {
   return (
     <>
@@ -69,14 +58,3 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: 24 * 60 * 60, //24 hours
   };
 };
-
-                                                                                        <AvnerJosé
-                                                                                          github="https://github.com/avnerjose"
-                                                                                          techs={["ReactJS", "NextJS", "React-Native"]}
-                                                                                          description="Bem vindo ao meu canal no Youtube"
-                                                                                        />
-
-
-
-
-                                                                                        

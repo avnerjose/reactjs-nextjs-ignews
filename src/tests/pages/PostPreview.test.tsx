@@ -88,4 +88,15 @@ describe("PostPreview page", () => {
       })
     );
   });
+
+  it("return no static paths", async () => {
+    const response = await getStaticPaths({});
+
+    expect(response).toEqual(
+      expect.objectContaining({
+        paths: [],
+        fallback: "blocking",
+      })
+    );
+  });
 });
